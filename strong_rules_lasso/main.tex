@@ -1,5 +1,8 @@
 \documentclass{amsart}
 
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dom}{\textrm{dom}}
+
 \usepackage{amssymb, amsmath}
 
 \title{Strong Rules for Efficient LASSO Computations and the BASIL Algorithm}
@@ -12,7 +15,36 @@
 
 \section{Strong rules for the LASSO}
 
-This paper is important \cite{tibshirani_strong_2012}.
+\subsection{Subgradients}
+
+Let $f: \R^m \rightarrow \R$ be convex.
+
+\bigskip
+
+Recall the following first order condition: if $f$ is differentiable, then 
+
+$$f(y) \geq f(x) + \nabla f(x)^T(y - x) \quad \forall x, y \in \dom(f)$$
+
+What if $f$ is not differentiable? This motivates the following definition: call
+$g \in \R^m$ a \textit{subgradient} of $f$ at $x$ iff
+
+$$f(y) \geq f(x) + g^T(y - x) \quad \forall x, y \in \dom(f)$$
+
+The subdifferential of $f$ at $x$, denote $\partial f(x)$ is the set of all
+subgradients. The following facts will be useful:
+
+\begin{enumerate}
+	\item If $f$ is differentiable, then $\partial f(x) = \{\nabla f(x) \}$
+	\item For $\alpha_1, \alpha_2 \geq 0$, then $\partial \left[\partial
+	\alpha_1 f_1(x) + \alpha_2 f_2(x) \right] = \alpha_1 \partial f_1(x) +
+	\alpha_2 \partial f_2(x)$
+	\item $x^*$ minimizes $f$ iff $0 \in \partial f(x^*)$
+\end{enumerate}
+
+where we define set addition as $A + B = \{a + b | a \in A, b \in B \}$. 
+\subsection{The LASSO}
+
+\subsection{Strong rules}
 
 \section{BASIL}
 
