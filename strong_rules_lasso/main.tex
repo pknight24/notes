@@ -4,6 +4,9 @@
 \newcommand{\dom}{\textrm{dom}}
 
 \usepackage{amssymb, amsmath}
+\usepackage{enumerate}
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
 
 \title{Strong Rules for Efficient LASSO Computations and the BASIL Algorithm}
 \author{Notes by Parker Knight}
@@ -35,7 +38,7 @@ subgradients. The following facts will be useful:
 
 \begin{enumerate}
 	\item If $f$ is differentiable at $x$, then $\partial f(x) = \{\nabla f(x) \}$
-	\item For $\alpha_1, \alpha_2 \geq 0$, then $\partial \left[\partial
+	\item For $\alpha_1, \alpha_2 \geq 0$, then $\partial \left[
 	\alpha_1 f_1(x) + \alpha_2 f_2(x) \right] = \alpha_1 \partial f_1(x) +
 	\alpha_2 \partial f_2(x)$
 	\item $x^*$ minimizes $f$ iff $0 \in \partial f(x^*)$
@@ -93,6 +96,61 @@ $\hat{\beta}_j(\lambda) = 0$.
 
 
 \subsection{Strong rules}
+
+Suppose we have a grid of tuning parameters $\lambda_1, ..., \lambda_L$, which
+which we seek exact LASSO solutions. The optimality condition described above
+can lead us to an algorithm which will return exact solutions, but only
+needs to solve a series of smaller sub-problems.
+
+\bigskip
+
+First we need an additional assumption. Let $c_j(\lambda_k) = X_j^T(Y -
+X\hat{\beta}(\lambda_k))$ for $j = 1, ..., p$. 
+
+\begin{assumption}\label{a1}
+$|c_j(\lambda) - c_j(\tilde{\lambda})| \leq |\lambda - \tilde{\lambda}| \quad
+\forall \lambda, \tilde{\lambda} > 0$
+\end{assumption}
+
+This says that $c_j(.)$ is non-expansive in its argument.
+
+\begin{theorem}\label{t1}
+	Suppose $|c_j(\lambda_{k-1})| < 2\lambda_k - \lambda_{k-1}$ and
+	Assumption \ref{a1} holds. Then $\hat{\beta}_j(\lambda_k) = 0$. 
+\end{theorem}
+
+\begin{proof}
+	Observe
+	\begin{align*}
+		|c_j(\lambda_k)| &= |c_j(\lambda_k) - c_j(\lambda{k-1}) + c_j(\lambda_{k-1})| \\
+		&\leq |c_j(\lambda_k) - c_j(\lambda{k-1})| + |c_j(\lambda_{k-1})| \\
+		&< (\lambda_{k-1} - \lambda_k) + (2\lambda_k - \lambda_{k-1}) \\
+		&= \lambda_k
+	\end{align*}	
+	By the optimality condition for the LASSO problem this implies
+	$\hat{\beta}_j(\lambda_k) = 0$. 
+\end{proof}
+
+Theorem \ref{t1} yields a natural algorithm for computing the LASSO solution for
+a grid of tuning parameters.
+
+\subsubsection{The strong rules algorithm}
+
+This method requires data $X$, outcome $Y$, tuning parameters $\lambda_1 ...
+\lambda_L$, and an initial estimate $\hat{\beta}(\lambda_1)$\footnote{This
+initial estimate could correspond to an intercept-only model, for instance.}
+Then, for $k = 1, ..., L-1$:
+
+\begin{enumerate}[I]
+	\item Let $\Omega \subset \{1, ..., p\}$ denote the set of eligible predictors, and
+	let $S(\lambda_k) \subset \{1,...,p\} = \{j : |c_j(\lambda_k)| <
+	2\lambda_{k+1} - \lambda_k \}$. Set $\Omega = S(\lambda_k)$. 
+	\item Solve the LASSO problem using only the predictors in $\Omega$. 
+	\item Check the subgradient optimality condition at \textit{all}
+	predictors in $X$. If none of them violate the condition, we are done, yielding $\hat{\beta}(\lambda_{k+1})$. If any of them violate the condition, add these
+	predictors to $\Omega$ and repeat steps two and three.
+\end{enumerate}
+
 
 \section{BASIL}
 
