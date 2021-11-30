@@ -142,13 +142,13 @@ initial estimate could correspond to an intercept-only model, for instance.}
 Then, for $k = 1, ..., L-1$:
 
 \begin{enumerate}[I]
-	\item Let $\Omega \subset \{1, ..., p\}$ denote the set of eligible predictors, and
-	let $S(\lambda_k) \subset \{1,...,p\} = \{j : |c_j(\lambda_k)| <
-	2\lambda_{k+1} - \lambda_k \}$. Set $\Omega = S(\lambda_k)$. 
-	\item Solve the LASSO problem using only the predictors in $\Omega$. 
+	\item Let $\upsilon \subset \{1, ..., p\}$ denote the set of eligible predictors, and
+	let $S(\lambda_k) \subset \{1,...,p\} = \{j : |c_j(\lambda_k)| >=
+	2\lambda_{k+1} - \lambda_k \}$. Set $\upsilon = S(\lambda_k)$. 
+	\item Solve the LASSO problem using only the predictors in $\upsilon$. 
 	\item Check the subgradient optimality condition at \textit{all}
 	predictors in $X$. If none of them violate the condition, we are done, yielding $\hat{\beta}(\lambda_{k+1})$. If any of them violate the condition, add these
-	predictors to $\Omega$ and repeat steps two and three.
+	predictors to $\upsilon$ and repeat steps two and three.
 \end{enumerate}
 
 

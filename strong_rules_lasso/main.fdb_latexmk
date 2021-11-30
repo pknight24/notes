@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex main"] 1637963369 "main.aux" "main.bbl" "main" 1637963547
+["bibtex main"] 1637963369 "main.aux" "main.bbl" "main" 1638292193
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1637963547 1010 2f530d41d7e265399f1b2501fefb41d5 "pdflatex"
+  "main.aux" 1638292193 1010 2f530d41d7e265399f1b2501fefb41d5 "pdflatex"
   "refs.bib" 1637102657 4062 5e20db84210af29d6504807b296d1c87 ""
   (generated)
-  "main.blg"
   "main.bbl"
-["pdflatex"] 1637963547 "/home/parker/notes/strong_rules_lasso/main.tex" "/home/parker/notes/strong_rules_lasso/main.pdf" "main" 1637963547
+  "main.blg"
+["pdflatex"] 1638292193 "/home/parker/notes/strong_rules_lasso/main.tex" "/home/parker/notes/strong_rules_lasso/main.pdf" "main" 1638292193
   "/etc/texmf/web2c/texmf.cnf" 1608949056 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/parker/notes/strong_rules_lasso/main.aux" 1637963547 1010 2f530d41d7e265399f1b2501fefb41d5 ""
-  "/home/parker/notes/strong_rules_lasso/main.tex" 1637963546 5127 7294402ed42f7b96b96b691676b647eb ""
+  "/home/parker/notes/strong_rules_lasso/main.aux" 1638292193 1010 2f530d41d7e265399f1b2501fefb41d5 ""
+  "/home/parker/notes/strong_rules_lasso/main.tex" 1638292192 5136 ef3964315ac575c52f24b0b8bd79ed75 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -57,12 +57,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1596975543 38841 5237427e4d3283e7b009b6a8b45dfdcd ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1620909881 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1620909885 1185980 f0b38a9997bcece7d8880c25f79e235e ""
-  "main.aux" 1637963547 1010 2f530d41d7e265399f1b2501fefb41d5 "pdflatex"
+  "main.aux" 1638292193 1010 2f530d41d7e265399f1b2501fefb41d5 "pdflatex"
   "main.bbl" 1637963369 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.tex" 1637963546 5127 7294402ed42f7b96b96b691676b647eb ""
+  "main.tex" 1638292192 5136 ef3964315ac575c52f24b0b8bd79ed75 ""
   (generated)
+  "/home/parker/notes/strong_rules_lasso/main.log"
   "main.aux"
-  "/home/parker/notes/strong_rules_lasso/main.pdf"
   "main.log"
   "main.pdf"
-  "/home/parker/notes/strong_rules_lasso/main.log"
+  "/home/parker/notes/strong_rules_lasso/main.pdf"
