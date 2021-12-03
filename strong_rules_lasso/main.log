@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.5.13)  3 DEC 2021 12:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.5.13)  3 DEC 2021 12:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -146,7 +146,7 @@ Overfull \hbox (11.23653pt too wide) in paragraph at lines 180--183
 []\OT1/cmr/m/n/10 master tun-ing pa-ram-e-ter list $^^C = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^U[]; :::; ^^U[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 and ini-tial list $^^C[] = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^U[]; :::; ^^U[]\OMS/cmsy/m/n/10 g$ 
  []
 
-(/home/parker/notes/strong_rules_lasso/main.bbl) [3] (/home/parker/notes/strong_rules_lasso/main.aux) ) 
+(/home/parker/notes/strong_rules_lasso/main.bbl [3]) [4] (/home/parker/notes/strong_rules_lasso/main.aux) ) 
 Here is how much of TeX's memory you used:
  2016 strings out of 482778
  24618 string characters out of 5955219
@@ -156,10 +156,10 @@ Here is how much of TeX's memory you used:
  220 hyphenation exceptions out of 8191
  43i,8n,37p,279b,198s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/parker/notes/strong_rules_lasso/main.pdf (3 pages, 187850 bytes).
+Output written on /home/parker/notes/strong_rules_lasso/main.pdf (4 pages, 189972 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

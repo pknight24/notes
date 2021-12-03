@@ -176,7 +176,7 @@ The algorithm requires the following inputs:
 \begin{itemize}
 	\item data $X, Y, \Omega = \{1, ..., p \}$
 	\item initial residual $r^{(0)}$ and active set $A^{(0)} = \emptyset$. 
-	\item integers $M, \ell, \ell'$
+	\item integers $M, \Delta M, \ell, \ell'$
 	\item master tuning parameter list $\Lambda = \{\lambda_1, ...,
 	\lambda_L \}$ and initial list $\Lambda^{(0)} = \{ \lambda_1, ...,
 	\lambda_{\ell} \}$
@@ -190,9 +190,7 @@ with the $M$ largest values of $c_j^{(k)}$. Define the strong set $S^{(k)} =
 A^{(k)} \cup \upsilon_M^{(k)}$. The key assumption of this step: among the
 variables that aren't already known to be active, those with the $M$ largest $c$
 values are likely to be active (pass the strong rules screening) at this
-iterate. This assumption is highly sensitive to the choice of $M$, see the
-Discussion in \cite{qian_fast_2020} for more.
-
+iterate. 
 
 \subsubsection{Fitting} For each $\lambda \in \Lambda^{(k)}$ fit the LASSO using
 only the covariates in $S^{(k)}$. Save $\hat{\beta}^{(k)}(\lambda)$ and residual
@@ -216,6 +214,21 @@ next  } \ell' \textrm{  tuning parameters in  } \Lambda \}$.
 For $\lambda \in
 \Lambda^{(k)} / \Lambda^{(k+1)}$, we found exact LASSO solutions. Continue
 iterating until we have solutions for all $\lambda \in \Lambda$. 
+
+\subsection{Discussion}
+
+The BASIL algorithm improves performance through its screening step.
+The inner products $c_j$ can be easily computed in parallel at each iteration.
+Assuming that the strong set is approximately correct for moderately-sized
+subsets of tuning parameters, this allows us to load only a small subset of
+variables into memory before fitting the model for multiple tuning parameters at
+once. Issues may arise with very small $\lambda$ values, since these are likely
+to have larger active sets - if $M$ is not sufficiently large to capture all of
+the active variables, this could lead to a large number of iterations being
+needed to fit the correct model. However, making $M$ too large defeats the very
+purpose of the screening step, so care must be taken. The authors of
+\cite{qian_fast_2020} discuss this, and provide a principled heuristic for
+choosing an appropriate $M$. 
 
 \bibliography{refs}
 \bibliographystyle{ieeetr}
