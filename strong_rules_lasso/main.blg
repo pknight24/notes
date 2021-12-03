@@ -2,47 +2,51 @@ This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: ieeetr.bst
-I found no \citation commands---while reading file main.aux
 Database file #1: refs.bib
-You've used 0 entries,
+Warning--empty year in boyd_convex_2004
+Warning--empty journal in tibshirani_strong_2012
+Warning--empty year in tibshirani_strong_2012
+Warning--empty journal in qian_fast_2020
+Warning--empty year in qian_fast_2020
+You've used 3 entries,
             1876 wiz_defined-function locations,
-            477 strings with 3462 characters,
-and the built_in function-call counts, 20 in all, are:
-= -- 0
-> -- 0
+            493 strings with 4147 characters,
+and the built_in function-call counts, 995 in all, are:
+= -- 87
+> -- 57
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 9
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 20
+- -- 17
+* -- 77
+:= -- 144
+add.period$ -- 4
+call.type$ -- 3
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 8
+duplicate$ -- 51
+empty$ -- 77
+format.name$ -- 17
+if$ -- 233
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 13
+num.names$ -- 3
+pop$ -- 16
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 41
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 48
+swap$ -- 25
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+warning$ -- 5
+while$ -- 7
+width$ -- 4
+write$ -- 28
+(There were 5 warnings)

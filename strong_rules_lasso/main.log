@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.5.13)  30 NOV 2021 12:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.5.13)  3 DEC 2021 12:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -137,28 +137,29 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.86934pt too wide) in paragraph at lines 145--148
+Overfull \hbox (6.86934pt too wide) in paragraph at lines 149--152
 []\OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 ^^] \OMS/cmsy/m/n/10 ^^Z f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; :::; p\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 de-note the set of el-i-gi-ble pre-dic-tors, and let $\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^Z f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; :::; p\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 =
  []
 
-(/home/parker/notes/strong_rules_lasso/main.bbl
+[2]
+Overfull \hbox (11.23653pt too wide) in paragraph at lines 180--183
+[]\OT1/cmr/m/n/10 master tun-ing pa-ram-e-ter list $^^C = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^U[]; :::; ^^U[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 and ini-tial list $^^C[] = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^U[]; :::; ^^U[]\OMS/cmsy/m/n/10 g$ 
+ []
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
-
-) [2] [3] (/home/parker/notes/strong_rules_lasso/main.aux) ) 
+(/home/parker/notes/strong_rules_lasso/main.bbl) [3] (/home/parker/notes/strong_rules_lasso/main.aux) ) 
 Here is how much of TeX's memory you used:
- 2011 strings out of 482778
- 24541 string characters out of 5955219
- 259538 words of memory out of 5000000
- 17234 multiletter control sequences out of 15000+600000
- 540842 words of font info for 52 fonts, out of 8000000 for 9000
+ 2016 strings out of 482778
+ 24618 string characters out of 5955219
+ 260538 words of memory out of 5000000
+ 17238 multiletter control sequences out of 15000+600000
+ 541194 words of font info for 53 fonts, out of 8000000 for 9000
  220 hyphenation exceptions out of 8191
  43i,8n,37p,279b,198s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/parker/notes/strong_rules_lasso/main.pdf (3 pages, 148616 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/parker/notes/strong_rules_lasso/main.pdf (3 pages, 187850 bytes).
 PDF statistics:
- 66 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

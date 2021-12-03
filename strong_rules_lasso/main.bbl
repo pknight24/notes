@@ -1,3 +1,18 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{boyd_convex_2004}
+S.~P. Boyd and L.~Vandenberghe, {\em Convex optimization}.
+\newblock Cambridge University Press.
+
+\bibitem{tibshirani_strong_2012}
+R.~Tibshirani, J.~Bien, J.~Friedman, T.~Hastie, N.~Simon, J.~Taylor, and R.~J.
+  Tibshirani, ``Strong rules for discarding predictors in lasso-type problems:
+  Strong rules for discarding predictors,'' vol.~74, no.~2, pp.~245--266.
+
+\bibitem{qian_fast_2020}
+J.~Qian, Y.~Tanigawa, W.~Du, M.~Aguirre, C.~Chang, R.~Tibshirani, M.~A. Rivas,
+  and T.~Hastie, ``A fast and scalable framework for large-scale and
+  ultrahigh-dimensional sparse regression with application to the {UK}
+  biobank,'' vol.~16, no.~10, p.~e1009141.
 
 \end{thebibliography}

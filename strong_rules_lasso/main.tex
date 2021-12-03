@@ -20,7 +20,7 @@
 
 \subsection{Subgradients}
 
-Let $f: \R^m \rightarrow \R$ be convex.
+Let $f: \R^m \rightarrow \R$ be convex \cite{boyd_convex_2004}.
 
 \bigskip
 
@@ -47,7 +47,7 @@ subgradients. The following facts will be useful:
 where we define set addition as $A + B = \{a + b | a \in A, b \in B \}$. 
 \subsection{The LASSO}
 
-Recall the LASSO loss function:
+Recall the LASSO \cite{tibshirani_strong_2012} loss function:
 
 $$Q_{\lambda}(\beta) = \|Y - X\beta \|_2^2 + \lambda \|\beta \|_1$$
 
@@ -96,6 +96,10 @@ $\hat{\beta}_j(\lambda) = 0$.
 
 
 \subsection{Strong rules}
+
+The material in this section comes largely from \cite{tibshirani_strong_2012}.
+
+\bigskip
 
 Suppose we have a grid of tuning parameters $\lambda_1, ..., \lambda_L$, which
 which we seek exact LASSO solutions. The optimality condition described above
@@ -154,6 +158,64 @@ Then, for $k = 1, ..., L-1$:
 
 \section{BASIL}
 
+The Batch Screening Iterative LASSO (BASIL) \cite{qian_fast_2020} algorithm takes advantage of the
+strong rules method to yield a correct LASSO solution for a set of tuning
+parameters while minimizing IO operations. This is valuable for massive genetic
+data, where the number of predictors may be too large to load into memory, and
+IO disk operations become expensive. 
+
+\subsection{The Algorithm} The BASIL algorithm is comprised of three main
+phases: screening (removing variables according to the strong rules), fitting
+(compute the LASSO fit with a subset of the variables), and checking (ensuring
+that optimality conditions are satisfied at all covariates).
+
+\bigskip
+
+The algorithm requires the following inputs:
+
+\begin{itemize}
+	\item data $X, Y, \Omega = \{1, ..., p \}$
+	\item initial residual $r^{(0)}$ and active set $A^{(0)} = \emptyset$. 
+	\item integers $M, \ell, \ell'$
+	\item master tuning parameter list $\Lambda = \{\lambda_1, ...,
+	\lambda_L \}$ and initial list $\Lambda^{(0)} = \{ \lambda_1, ...,
+	\lambda_{\ell} \}$
+\end{itemize}
+
+Then, at iterate $k$:
+
+\subsubsection{Screening} For each $j \in \Omega / A^{(k)}$, compute $c_j^{(k)} =
+X_j^Tr^{(k)}$. Let $\upsilon_M^{(k)}$ denote the set of indices in $\Omega / A^{(k)}$
+with the $M$ largest values of $c_j^{(k)}$. Define the strong set $S^{(k)} =
+A^{(k)} \cup \upsilon_M^{(k)}$. The key assumption of this step: among the
+variables that aren't already known to be active, those with the $M$ largest $c$
+values are likely to be active (pass the strong rules screening) at this
+iterate. This assumption is highly sensitive to the choice of $M$, see the
+Discussion in \cite{qian_fast_2020} for more.
+
+
+\subsubsection{Fitting} For each $\lambda \in \Lambda^{(k)}$ fit the LASSO using
+only the covariates in $S^{(k)}$. Save $\hat{\beta}^{(k)}(\lambda)$ and residual
+$r^{(k)}(\lambda)$.
+
+\subsubsection{Checking} Find the smallest $\lambda \in \Lambda^{(k)}$ at which
+the KKT optimality condition is satisfied:
+
+$$\bar{\lambda}^{(k)} = \min \left\{\lambda \in \Lambda^{(k)} : \max_{j \in \Omega /
+S^{(k)}} \left[\frac1n|X_j^Tr^{(k)}(\lambda)| \right] < \lambda \right\}$$
+
+If this set is empty, increase $M$ by $\Delta M$ and repeat the Screening and
+Fitting steps (this wil increase the size of the strong set). Otherwise, let
+$r^{(k+1)} = r^{(k)}(\bar{\lambda}^{(k)})$, set $A^{(k+1)}$ to be the active set
+at $\hat{\beta}^{(k)}(\bar{\lambda}^{(k)})$, and let $\Lambda^{(k+1)} = \{
+\lambda \in \Lambda^{(k)} : \lambda < \bar{\lambda}^{(k)} \} \cup \{\textrm{the
+next  } \ell' \textrm{  tuning parameters in  } \Lambda \}$. 
+
+\bigskip
+
+For $\lambda \in
+\Lambda^{(k)} / \Lambda^{(k+1)}$, we found exact LASSO solutions. Continue
+iterating until we have solutions for all $\lambda \in \Lambda$. 
 
 \bibliography{refs}
 \bibliographystyle{ieeetr}
