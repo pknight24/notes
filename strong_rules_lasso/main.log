@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.5.13)  3 DEC 2021 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.5.13)  11 DEC 2021 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -105,6 +105,8 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks26
+) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/bookman.sty
+Package: bookman 2020/03/25 PSNFSS-v9.3 (SPQR) 
 )
 \c@assumption=\count188
 \c@theorem=\count189
@@ -115,51 +117,63 @@ File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
 ) (/home/parker/notes/strong_rules_lasso/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Trying to load font information for OT1+pbk on input line 16.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pbk.fd
+File: ot1pbk.fd 2001/06/04 font definitions for OT1/pbk.
+)
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <10> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 16.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <8> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.86934pt too wide) in paragraph at lines 149--152
-[]\OT1/cmr/m/n/10 Let $\OML/cmm/m/it/10 ^^] \OMS/cmsy/m/n/10 ^^Z f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; :::; p\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 de-note the set of el-i-gi-ble pre-dic-tors, and let $\OML/cmm/m/it/10 S\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^U[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^Z f\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; :::; p\OMS/cmsy/m/n/10 g \OT1/cmr/m/n/10 =
- []
-
-[2]
-Overfull \hbox (11.23653pt too wide) in paragraph at lines 180--183
-[]\OT1/cmr/m/n/10 master tun-ing pa-ram-e-ter list $^^C = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^U[]; :::; ^^U[]\OMS/cmsy/m/n/10 g$ \OT1/cmr/m/n/10 and ini-tial list $^^C[] = \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 ^^U[]; :::; ^^U[]\OMS/cmsy/m/n/10 g$ 
- []
-
-(/home/parker/notes/strong_rules_lasso/main.bbl [3]) [4] (/home/parker/notes/strong_rules_lasso/main.aux) ) 
+)
+LaTeX Font Info:    Font shape `OT1/pbk/b/n' in size <10> not available
+(Font)              Font shape `OT1/pbk/db/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `OT1/pbk/m/sc' in size <10> not available
+(Font)              Font shape `OT1/pbk/l/sc' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <7> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 30.
+LaTeX Font Info:    Font shape `OT1/pbk/m/n' in size <5> not available
+(Font)              Font shape `OT1/pbk/l/n' tried instead on input line 30.
+LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <10> not available
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 33.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (/home/parker/notes/strong_rules_lasso/main.bbl
+LaTeX Font Info:    Font shape `OT1/pbk/m/it' in size <8> not available
+(Font)              Font shape `OT1/pbk/l/it' tried instead on input line 4.
+) [4] (/home/parker/notes/strong_rules_lasso/main.aux) ) 
 Here is how much of TeX's memory you used:
- 2016 strings out of 482778
- 24618 string characters out of 5955219
- 260538 words of memory out of 5000000
- 17238 multiletter control sequences out of 15000+600000
- 541194 words of font info for 53 fonts, out of 8000000 for 9000
+ 2092 strings out of 482778
+ 25762 string characters out of 5955219
+ 259590 words of memory out of 5000000
+ 17301 multiletter control sequences out of 15000+600000
+ 547338 words of font info for 63 fonts, out of 8000000 for 9000
  220 hyphenation exceptions out of 8191
- 43i,8n,37p,279b,198s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/parker/notes/strong_rules_lasso/main.pdf (4 pages, 189972 bytes).
+ 43i,8n,37p,279b,268s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkd8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb>
+Output written on /home/parker/notes/strong_rules_lasso/main.pdf (4 pages, 146852 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
