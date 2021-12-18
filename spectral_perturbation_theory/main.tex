@@ -1,0 +1,64 @@
+\documentclass{amsart}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dom}{\textrm{dom}}
+\newcommand{\dist}{\textrm{dist}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calO}{\mathcal{O}}
+
+\usepackage{amssymb, amsmath}
+\usepackage{enumerate}
+
+\usepackage{palatino}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\title{Spectral Perturbation Theory}
+\author{Notes by Parker Knight}
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+This set of notes will closely follow the second chapter of \cite{chen_spectral_2021}. My aim is to describe some useful matrix perturbation theorems, give their proofs, and describe an application of the theory to a problem in statistics.
+
+The general problem is defined as follows: suppose there exists some matrix of interest $M^{*}$, and we observe a perturbed version $M = M^{*} + E$ where $E$ is a perturbation matrix. We are interested in characterizing how the spectral properties of $M^{*}$ (i.e. the eigenspace or singular subspace) change in light of the perturbation $E$. To do so, we will describe the classic Davis-Kahan $\sin \Theta$ theorem for symmetric matrices, and Wedin's extension to general matrices. But first, we describe various metrics for describing the distance between subspaces.
+
+Throughout the note set, we let $\calU^{*}$ and $\calU$ denote two $r$ dimensional subspaces in $\R^{n}$. Let $U^{*}$ and $U$ be matrices in $\R^{n \times r}$ whose columns form an orthonormal basis for $\calU^{*}$ and $\calU$ respectively. For any matrix $A$, let $A_{\perp}$ denote its orthogonal compliment. Let $\calO^{r \times r}$ denote the set of orthogonal matrices in $\R^{r \times r}$.
+
+\section{Distance between subspaces}
+
+A key challenge in describing the distance between subspaces is the notion of rotational ambiguity, namely for for any rotation matrix $R \in R^{r \times r}$, we have that $UR$ is also an orthogonal basis for $\calU$. So, even when $\calU^{*} = \calU$, we may have $|||U - U^*||| \neq 0$ for our matrix norm of choice $||| . |||$, depending on how the bases are rotated. Any useful distance metric on subspaces much account for this rotational ambiguity. Following the approach of \cite{chen_spectral_2021}, we describe a few difference useful choices of metric.
+
+\subsection{Distance with optimal rotation}
+
+A natural approach to addressing the rotational invariance problem is to simply choose the rotation of $U$ which is
+closest in norm to $U^{*}$. This yields the following distance metric:
+
+$$\dist(U, U^{*}) := \min_{R \in \calO^{r \times r}}|||UR - U^{*}|||$$
+
+\subsection{Distance between projections}
+
+Recall that the projection onto $\calU$ is given by $UU^{T}$. A useful fact is that this projection matrix is unchanged by its rotation: for any $R \in \calO^{r \times r}$, we have $UR(UR)^{T} = URR^{T}U^{T} = UU^{T}$. This motivates the following metric between subspaces:
+
+$$\dist_{p}(U, U^{*}) := |||UU^{T} - U^{*}U^{*T}|||$$
+
+\subsection{Distance via principal angles}
+
+
+\section{Davis-Kahan}
+
+\section{Wedin}
+
+\section{An application}
+
+
+\bibliography{refs}
+\bibliographystyle{ieeetr}
+
+\end{document}
