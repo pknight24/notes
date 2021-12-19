@@ -25,11 +25,11 @@
 
 \section{Introduction}
 
-This set of notes will closely follow the second chapter of \cite{chen_spectral_2021}. My aim is to describe some useful matrix perturbation theorems, give their proofs, and describe an application of the theory to a problem in statistics.
+This set of notes will closely follow the second chapter of \cite{chen_spectral_2021}.
 
 The general problem is defined as follows: suppose there exists some matrix of interest $M^{*}$, and we observe a perturbed version $M = M^{*} + E$ where $E$ is a perturbation matrix. We are interested in characterizing how the spectral properties of $M^{*}$ (i.e. the eigenspace or singular subspace) change in light of the perturbation $E$. To do so, we will describe the classic Davis-Kahan $\sin \Theta$ theorem for symmetric matrices, and Wedin's extension to general matrices. But first, we describe various metrics for describing the distance between subspaces.
 
-Throughout the note set, we let $\calU^{*}$ and $\calU$ denote two $r$ dimensional subspaces in $\R^{n}$. Let $U^{*}$ and $U$ be matrices in $\R^{n \times r}$ whose columns form an orthonormal basis for $\calU^{*}$ and $\calU$ respectively. For any matrix $A$, let $A_{\perp}$ denote its orthogonal compliment. Let $\calO^{r \times r}$ denote the set of orthogonal matrices in $\R^{r \times r}$.
+Throughout the note set, we let $\calU^{*}$ and $\calU$ denote two $r$ dimensional subspaces in $\R^{n}$. Let $U^{*}$ and $U$ be matrices in $\R^{n \times r}$ whose columns form an orthonormal basis for $\calU^{*}$ and $\calU$ respectively. For any matrix $A$, let $A_{\perp}$ denote its orthogonal compliment. Let $\calO^{r \times r}$ denote the set of orthogonal matrices in $\R^{r \times r}$, and let $||.||_{op}$ denote the operator norm (largest singular value) of a matrix.
 
 \section{Distance between subspaces}
 
@@ -50,13 +50,55 @@ $$\dist_{p}(U, U^{*}) := |||UU^{T} - U^{*}U^{*T}|||$$
 
 \subsection{Distance via principal angles}
 
+Let $\sigma_{1} \geq \sigma_{2} \geq ... \geq \sigma_{r} \geq 0$ be the singular values of $U^{T}U^{*}$ arranged in descending order. By the properties of the operator norm\footnote{This follows from the definition: Recall for any $A$ and $x$ with agreeing dimension, we have $||Ax||_2 \leq ||A||_{op}||x||_{2}$. It follows that $||BAx||_{2} \leq ||B||_{op}||Ax||_{2} \leq ||B||_{op}||A||_{op}||x||_{2}$. Thus, $||BA||_{op} \leq ||B||_{op}||A||_{op}$.}, we know that $||U^TU^*||_{op} \leq ||U||_{op} ||U^*||_{op} = 1$. So, it follows that the singular values all fall with $[0.1]$. Using this fact, we define the principal angles between $\calU$ and $\calU^{*}$ as
+
+$$\theta_{i} := \arccos(\sigma_{i})$$
+
+for $i = 1, ..., r$. These principal angles satisfy
+
+$$0 \leq \theta_{1} \leq \theta_{r} \leq \pi/2$$
+
+Join these angles into a diagonal matrix $\Theta$, and define the following metric
+
+$$\dist_{\sin}(U, U^{*}) := |||\sin \Theta|||$$
+
+where $\sin$ is applied elementwise to $\Theta$, and $|||.|||$ is a matrix norm of choice.
+
+\bigskip
+
+It can be shown (ommitted here) that these three distance metrics are equivalent up to a scaling factor of $\sqrt{2}$ when the norm of choice is the operator norm or the Frobenius norm. Following the example of \cite{chen_spectral_2021}, we will use the optimal rotation metric throughout these notes.
 
 \section{Davis-Kahan}
 
+Now we are able to develop a theory for understanding the effect of perturbation on eigenspaces.
+
+\bigskip
+
+Throughout this section, let $M^{*}$ and $M = M^{*} + E$ be $n \times n$ real symmetric matrices, with eigendecompositions
+
+\begin{align*}
+  M^{*} &= \begin{bmatrix}U^{*} & U^{*}_{\perp} \end{bmatrix} \begin{bmatrix}\Lambda^{*} & 0 \\ 0 & \Lambda^{*}_{\perp} \end{bmatrix} \begin{bmatrix} U^{*T} \\ U^{*T}_{\perp}\end{bmatrix} \\
+  M &= \begin{bmatrix}U & U_{\perp} \end{bmatrix} \begin{bmatrix}\Lambda & 0 \\ 0 & \Lambda_{\perp} \end{bmatrix} \begin{bmatrix} U^{T} \\ U^{T}_{\perp}\end{bmatrix} \\
+\end{align*}
+
+where $U^{*}$ and $U$ lie in $\R^{n \times r}$. Now we present the Davis-Kahan theorem.
+
+\begin{theorem}
+  Suppose that
+  \begin{align*}
+    &\textrm{diag} (\Lambda^{*}) \subseteq [\alpha, \beta] \\
+    &\textrm{diag} (\Lambda_{{\perp}}) \subseteq (-\infty, \alpha - \Delta] \cup [\beta + \Delta, \infty)
+  \end{align*}
+
+  for some $\alpha, \beta \in \R$ and $\Delta > 0$. Then:
+
+  \begin{align*}
+    &\dist_{op} (U, U^{*}) \leq \sqrt{2}||\sin \Theta ||_{op} \leq \frac{\sqrt{2}||EU^{*}||_{op}}{\Delta} \leq \frac{\sqrt{2}||E||_{op}}{\Delta} \\
+    &\dist_{F}(U, U^{*}) \leq \sqrt{2}||\sin \Theta ||_{F} \leq \frac{\sqrt{2}||EU^{*}||_{F}}{\Delta} \leq \frac{\sqrt{2}||E||_{op}}{\Delta}
+   \end{align*}
+
+\end{theorem}
 \section{Wedin}
-
-\section{An application}
-
 
 \bibliography{refs}
 \bibliographystyle{ieeetr}
