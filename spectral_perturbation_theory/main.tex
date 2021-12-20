@@ -98,6 +98,37 @@ where $U^{*}$ and $U$ lie in $\R^{n \times r}$. Now we present the Davis-Kahan t
    \end{align*}
 
 \end{theorem}
+
+\begin{proof}
+
+  We prove the theorem by controlling the distance $|||U^{T}_{\perp}U^{*}|||$ where $|||.|||$ is unitarily invariant.
+
+  Without loss of generality, we constrain ourselves to the case where $\alpha = -\beta \leq 0$\footnote{If case is violated, we can 'center' the matrices $M$ and $M^{*}$ and recover the same setting; see \cite{chen_spectral_2021}.}. This assumption, combined with the assumption of the theorem, give us the following:
+
+  $$||\Lambda^{*}||_{op} \leq \beta$$
+
+  $$\sigma_{\min}(\Lambda^{\perp}) \geq \beta + \Delta$$
+
+  Now we can study $U^{T}_{\perp}U^{*}$. Using the properties of eigenvectors, we first observe the following identity:
+
+  $$U^{T}_{\perp}EU^{*} = U^{T}_{\perp}(M - M^{*})U^{*} = \Lambda_{\perp}U^{T}_{\perp}U^{*} - U_{\perp}^{T}U^{*}\Lambda^{*}$$
+
+  Letting $R := EU^{*}$, we apply the triangle inequality to obtain:
+
+ \begin{align*}
+   |||U^{T}_{\perp}R||| &\geq |||\Lambda_{\perp}U^{T}_{\perp}U^{*}||| - |||U_{\perp}^{T}U^{*}\Lambda^{*}||| \\
+                        &\geq \sigma_{\min}(\Lambda_{\perp})|||U_{\perp}^{T}U^{*}||| - ||\Lambda^{*}||_{op}|||U_{\perp}^{T}U^{*}||| \\
+  &\geq (\beta + \Delta - \beta) |||U^{T}_{\perp}U^{*}||| = \Delta |||U^{T}_{\perp}U^{*}|||
+ \end{align*}
+
+ It immediately follows that
+
+ $$|||U^{T}_{\perp}U^{*}||| \leq \frac{|||U_{\perp}^{T}U^{*}}{\Delta} \leq \frac{|||R|||}{\Delta} = \frac{|||EU^{*}|||}{\Delta}$$
+
+ and we are done.
+\end{proof}
+
+
 \section{Wedin}
 
 \bibliography{refs}
