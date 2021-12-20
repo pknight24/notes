@@ -27,7 +27,7 @@
 
 This set of notes will closely follow the second chapter of \cite{chen_spectral_2021}.
 
-The general problem is defined as follows: suppose there exists some matrix of interest $M^{*}$, and we observe a perturbed version $M = M^{*} + E$ where $E$ is a perturbation matrix. We are interested in characterizing how the spectral properties of $M^{*}$ (i.e. the eigenspace or singular subspace) change in light of the perturbation $E$. To do so, we will describe the classic Davis-Kahan $\sin \Theta$ theorem for symmetric matrices, and Wedin's extension to general matrices. But first, we describe various metrics for describing the distance between subspaces.
+The general problem is defined as follows: suppose there exists some matrix of interest $M^{*}$, and we observe a perturbed version $M = M^{*} + E$ where $E$ is a perturbation matrix. We are interested in characterizing how the spectral properties of $M^{*}$ (i.e. the eigenspace) change in light of the perturbation $E$. To do so, we will describe the classic Davis-Kahan $\sin \Theta$ theorem for symmetric matrices. But first, we describe various metrics for describing the distance between subspaces.
 
 Throughout the note set, we let $\calU^{*}$ and $\calU$ denote two $r$ dimensional subspaces in $\R^{n}$. Let $U^{*}$ and $U$ be matrices in $\R^{n \times r}$ whose columns form an orthonormal basis for $\calU^{*}$ and $\calU$ respectively. For any matrix $A$, let $A_{\perp}$ denote its orthogonal compliment. Let $\calO^{r \times r}$ denote the set of orthogonal matrices in $\R^{r \times r}$, and let $||.||_{op}$ denote the operator norm (largest singular value) of a matrix.
 
@@ -128,8 +128,6 @@ where $U^{*}$ and $U$ lie in $\R^{n \times r}$. Now we present the Davis-Kahan t
  and we are done.
 \end{proof}
 
-
-\section{Wedin}
 
 \bibliography{refs}
 \bibliographystyle{ieeetr}
