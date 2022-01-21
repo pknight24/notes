@@ -1,0 +1,21 @@
+\begin{thebibliography}{1}
+
+\bibitem{izenman_reduced-rank_1975}
+A.~J. Izenman, ``Reduced-rank regression for the multivariate linear model,''
+  vol.~5, no.~2, pp.~248--264.
+
+\bibitem{allen_generalized_2014}
+G.~I. Allen, L.~Grosenick, and J.~Taylor, ``A generalized least-square matrix
+  decomposition,'' vol.~109, no.~505, pp.~145--159.
+
+\bibitem{wang_generalized_2021}
+Y.~Wang, A.~Shojaie, T.~W. Randolph, and J.~Ma, ``Generalized matrix
+  decomposition regression: Estimation and inference for two-way structured
+  data,''
+
+\bibitem{witten_penalized_2009}
+D.~M. Witten, R.~Tibshirani, and T.~Hastie, ``A penalized matrix decomposition,
+  with applications to sparse principal components and canonical correlation
+  analysis,'' vol.~10, no.~3, pp.~515--534.
+
+\end{thebibliography}

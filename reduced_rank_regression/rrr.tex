@@ -1,11 +1,13 @@
 \documentclass{article}
 
 \newcommand{\rank}{\textrm{rank}}
+\newcommand{\tr}{\textrm{tr}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\X}{\mathbb{X}}
 \newcommand{\Y}{\mathbb{Y}}
 \newcommand{\calU}{\mathcal{U}}
 \newcommand{\calO}{\mathcal{O}}
+\newcommand{\calB}{\mathcal{B}}
 \newcommand{\argmin}{\mathop{\rm arg\,min}}
 \usepackage{amssymb, amsmath}
 \usepackage{enumerate}
@@ -50,11 +52,60 @@ information across each of the $q$ regression problems.
 
 One possible hypothesis is that
 the signal in $B$ is driven by a small number of latent factors; i.e., $B$ is
-low rank. This motivates \textit{reduced rank regression}, in which we estimate
+low rank. This motivates \textit{reduced rank regression} \cite{izenman_reduced-rank_1975}, in which we estimate
 $B$ by solving the following:
 
 $$\hat{B}_{RRR}(k) = \argmin_{B: \rank(B) \leq k}\|\Y - \X B \|_F^2$$
 
 We will see that a convenient, closed form solution exists.
+
+Notice
+
+\begin{align*}
+	\|\Y - \X B \|_F^2 &= \| (\Y - \X \hat{B}_{OLS}) + (\X \hat{B}_{OLS} - \X B) \|_F^2 \\
+	&= \| (\Y - \X \hat{B}_{OLS})\|_F^2 + \| (\X \hat{B}_{OLS} - \X B) \|_F^2
+\end{align*}
+
+The second equality holds because $\X \hat{B}_{OLS}$ is the orthogonal
+projection of $\Y$ onto the column space of $\X$, and so $\Y - \X \hat{B}_{OLS}$
+is orthogonal to this column space. Since $\X \hat{B}_{OLS} - \X
+B$ clearly resides in the column space of $\X$, the cross terms are zero and we
+have equality.
+
+Since $\Y - \X \hat{B}_{OLS}$ does not include $B$, it follows that we can write 
+
+\begin{align*}
+	\hat{B}_{RRR}(k) &= \argmin_{B: \rank(B) \leq k}\|\X \hat{B}_{OLS} - \X B \|_F^2 \\
+	&= \argmin_{B: \rank(B) \leq k}\|\X (\hat{B}_{OLS} - B) \|_F^2 \\
+	&= \argmin_{B: \rank(B) \leq k} \tr \left[(\hat{B}_{OLS} - B)^T\X^T\X(\hat{B}_{OLS} - B) \right] \\
+	&= \argmin_{B: \rank(B) \leq k} \tr \left[(\hat{B}_{OLS} - B)^T\hat{\Sigma}(\hat{B}_{OLS} - B) \right] \\
+	&= \argmin_{B :\rank{B} \leq k} \| \hat{B}_{OLS} - B \|_{\hat{\Sigma}}^2
+\end{align*}
+
+This is precisely the rank $k$ Generalized Matrix Decomposition (GMD) of $\hat{B}_{OLS}$
+with respect to $\hat{\Sigma} = \X^T\X$; see \cite{allen_generalized_2014,wang_generalized_2021}. Thus we can compute
+$\hat{B}_{RRR}(k)$ easily.
+
+\section{Generalizations}
+
+Can we generalize this notion of a GMD-based reduced rank regression? For
+instance, consider the more general problem:
+
+$$\hat{\calB}(k) = \argmin_{B: \rank(B) \leq k}\| \hat{\Theta} - B \|_{\Psi}^2 +
+P_{\lambda}(B)$$
+
+where $\hat{\Theta} \in \R^{p \times q}$ is any collection of regression
+coefficients for the $q$ outcomes\footnote{Perhaps, for instance, the columns of
+$\hat{\Theta}$ are computed by a LASSO or Ridge regression.}, $\Psi$ is any
+matrix of similarity/correlation between
+features, and $P_{\lambda}(.)$ is a penalty function with tuning parameter
+$\lambda > 0$. This problem is a penalized, generalized matrix
+decomposition \cite{witten_penalized_2009} on a matrix of regression coefficients. 
+
+One application that I'm interested in: what if $\hat{\Theta}$ is a matrix of
+SNP-phenotype associations from a GWAS, and $\Psi$ is an LD matrix?
+
+\bibliography{refs.bib}
+\bibliographystyle{ieeetr}
 
 \end{document}
