@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\argmin}{\mathop{\rm arg\,min}}
+\usepackage{amssymb, amsmath}
+\usepackage{enumerate}
+
+\usepackage{palatino}
+
+
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\title{On Reduced Rank Regression}
+\author{Notes by Parker Knight}
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+Consider the multivariate linear model
+
+$$\Y = \X B + E$$
+
+where $\Y,E \in \R^{n \times q}$, $\X \in \R^{n \times p}$ and $B \in \R^{p
+\times q}$. In other words, we have $n$ samples, $q$ distinct outcomes, and $p$
+features or covariates. For now, we assume $n \geq p$ and $\X$ is full rank. We
+can estimate $B$ via least squares:
+
+\begin{align*}
+	\hat{B}_{OLS} &= \argmin_{B}\|\Y - \X B \|_F^2 \\
+	&= (\X^T\X)^{-1}\X^T\Y
+\end{align*}
+
+Note that this is equivalent to running $q$ separate univariate regression, and
+combining the coefficient estimates into a matrix. This fails to share
+information across each of the $q$ regression problems. 
+
+\section{Reduced Rank Regression}
+
+One possible hypothesis is that
+the signal in $B$ is driven by a small number of latent factors; i.e., $B$ is
+low rank. This motivates \textit{reduced rank regression}, in which we estimate
+$B$ by solving the following:
+
+$$\hat{B}_{RRR}(k) = \argmin_{B: \rank(B) \leq k}\|\Y - \X B \|_F^2$$
+
+We will see that a convenient, closed form solution exists.
+
+\end{document}
