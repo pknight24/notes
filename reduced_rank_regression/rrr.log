@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.1.3)  21 JAN 2022 16:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.1.3)  21 JAN 2022 16:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -131,7 +131,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (8.02394pt too wide) in paragraph at lines 105--107
+Overfull \hbox (8.02394pt too wide) in paragraph at lines 103--105
 []\OT1/ppl/m/n/10 One ap-pli-ca-tion that I'm in-ter-ested in: what if $[]$ is a ma-trix of SNP-phenotype
  []
 
@@ -144,13 +144,13 @@ Underfull \hbox (badness 1668) in paragraph at lines 4--6
 Here is how much of TeX's memory you used:
  1649 strings out of 482854
  20879 string characters out of 5956882
- 254208 words of memory out of 5000000
+ 253208 words of memory out of 5000000
  17006 multiletter control sequences out of 15000+600000
  550952 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  35i,11n,33p,264b,203s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></home/parker/texmf/fonts/type1/urw/palatino/uplb8a.pfb></home/parker/texmf/fonts/type1/urw/palatino/uplr8a.pfb></home/parker/texmf/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /home/parker/notes/reduced_rank_regression/rrr.pdf (3 pages, 123892 bytes).
+Output written on /home/parker/notes/reduced_rank_regression/rrr.pdf (3 pages, 123843 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

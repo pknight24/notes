@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex rrr"] 1642800158 "rrr.aux" "rrr.bbl" "rrr" 1642800434
+["bibtex rrr"] 1642800158 "rrr.aux" "rrr.bbl" "rrr" 1642800887
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
   "refs.bib" 1642799987 3917 361eeea67941db2b30de3d49d037e005 ""
-  "rrr.aux" 1642800434 635 6b2bb2e9ffe52a95080f9e16e3357ad6 "pdflatex"
+  "rrr.aux" 1642800887 635 6b2bb2e9ffe52a95080f9e16e3357ad6 "pdflatex"
   (generated)
-  "rrr.blg"
   "rrr.bbl"
-["pdflatex"] 1642800434 "/home/parker/notes/reduced_rank_regression/rrr.tex" "/home/parker/notes/reduced_rank_regression/rrr.pdf" "rrr" 1642800434
+  "rrr.blg"
+["pdflatex"] 1642800887 "/home/parker/notes/reduced_rank_regression/rrr.tex" "/home/parker/notes/reduced_rank_regression/rrr.pdf" "rrr" 1642800887
   "/etc/texmf/web2c/texmf.cnf" 1641229488 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/parker/notes/reduced_rank_regression/rrr.aux" 1642800434 635 6b2bb2e9ffe52a95080f9e16e3357ad6 ""
-  "/home/parker/notes/reduced_rank_regression/rrr.tex" 1642800434 3954 39936088707ada95bbcb374a51abc7f9 ""
+  "/home/parker/notes/reduced_rank_regression/rrr.aux" 1642800887 635 6b2bb2e9ffe52a95080f9e16e3357ad6 ""
+  "/home/parker/notes/reduced_rank_regression/rrr.tex" 1642800887 3893 2a60cd3598fdba8a8db93386e8638862 ""
   "/home/parker/texmf/fonts/tfm/adobe/palatino/pplb7t.tfm" 1136768653 1616 371d1ee60c04b008c8fd760060cd34f1 ""
   "/home/parker/texmf/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136768653 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
   "/home/parker/texmf/fonts/tfm/adobe/palatino/pplr7t.tfm" 1136768653 1804 7b5f73028f6509167f47ace9d69509ed ""
@@ -69,12 +69,12 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1596975543 38841 5237427e4d3283e7b009b6a8b45dfdcd ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1641229492 75955 f78456fd1308dc295dc476a68e28d85b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1641229493 1156131 63907c96100ffd66de7db7888af4471a ""
-  "rrr.aux" 1642800434 635 6b2bb2e9ffe52a95080f9e16e3357ad6 "pdflatex"
+  "rrr.aux" 1642800887 635 6b2bb2e9ffe52a95080f9e16e3357ad6 "pdflatex"
   "rrr.bbl" 1642800158 782 87554ec628358f5b946bfa824830972f "bibtex rrr"
-  "rrr.tex" 1642800434 3954 39936088707ada95bbcb374a51abc7f9 ""
+  "rrr.tex" 1642800887 3893 2a60cd3598fdba8a8db93386e8638862 ""
   (generated)
-  "rrr.pdf"
-  "rrr.aux"
-  "/home/parker/notes/reduced_rank_regression/rrr.pdf"
   "rrr.log"
+  "rrr.aux"
   "/home/parker/notes/reduced_rank_regression/rrr.log"
+  "/home/parker/notes/reduced_rank_regression/rrr.pdf"
+  "rrr.pdf"
