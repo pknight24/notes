@@ -1,0 +1,137 @@
+\documentclass{article}
+
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\tr}{\textrm{tr}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\argmin}{\mathop{\rm arg\,min}}
+\newcommand{\ev}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\prob}[1]{\mathbb{P}\left\{#1\right\}}
+\newcommand{\var}{\textrm{var}}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{enumerate}
+
+\usepackage{palatino}
+
+
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{example}{Example}
+
+\title{Least squares with sparsity}
+\author{Notes by Parker Knight}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	It is well known that, in the low-dimensional setting, the OLS estimator
+	enjoys several nice properties, including consistency. However, in the
+	high-dimensional regime, the aspect ratio stays bounded away from 0, and
+	the estimator may not converge to the true parameter value. We may
+	ameliorate this shortcoming by imposing additional structure on the true
+	parameter; in particular, we assume that the parameter vector is sparse.
+
+	This note set will study nonasymptotic bounds on estimation and
+	prediction error for the LASSO, the most well-known variant of sparse regression. To do so, we first develop a
+	theory of tail bounds and sub-Gaussian random variables. After studying
+	the LASSO, we give a brief treatment of general regularized M-estimators.
+\end{abstract}
+
+\section{Preliminaries}
+
+\subsection{Basic tail bounds}
+
+The development of a nonasymptotic theory involves understanding the extreme
+behavior of random variables; more specifically, we seek to study how random
+variables fluctuate around their mean. Our primary tool to do so is known as
+\textit{Markov's inequality}, which is stated and proven below.
+
+\begin{theorem}[Markov's inequality]
+	Let $X$ be a random variable and let $g(.)$ be a
+	nonnegative function. Then for $t \geq 0$
+
+	$$\prob{g(X) \geq t} \leq \frac{\ev{g(X)}}{t}$$
+\end{theorem}
+
+\begin{proof}
+	\begin{align*}
+		\ev{g(X)} &= \int_{\R}g(x)f(x)dx \\ 
+		&\geq \int_{\{x: g(x) \geq t\}}g(x)f(x)dx \quad \textrm{(using nonnegativity of $g$)} \\
+		&\geq t\int_{\{x : g(x) \geq t}f(x)dx \\
+		&= t\prob{g(X) \geq t}
+	\end{align*}
+
+	Rearranging terms gives the result.
+\end{proof}
+
+Through a careful choice of function $g(.)$, we can control the tails of $X$
+rather elegantly.
+
+\begin{corollary}[Chebyshev's inequality]
+	Let $X$ be a random variable with a finite second moment. Then for $t
+	\geq 0$
+
+	$$\prob{|X - \ev{X}| \geq t} \leq \frac{\var(X)}{t^2}$$
+\end{corollary}
+
+\begin{proof}
+	By direct calculation:
+
+	\begin{align*}
+		\prob{|X - \ev{X}| \geq t} &= \prob{(X - \ev{X})^2 \geq t^2} \\ 
+		&\leq \frac{\ev{(X  - \ev{X})^2}}{t^2} \quad \textrm{(by Markov)} \\
+		&= \frac{\var(X)}{t^2}
+	\end{align*}
+\end{proof}
+
+Chebyshev's inequality requires only the existence of a second moment, but in
+many cases, can be quite loose. We can obtain tighter bounds under more
+stringent conditions on $X$. 
+
+\begin{corollary}[Chernoff bound]
+	Let $X$ be a random variable with a moment-generating function that
+	exists at all $\lambda \in \R$.  Then for $t \geq 0$
+
+	$$\prob{X \geq t} \leq \inf_{\lambda \in \R}e^{-t\lambda}\ev{e^{\lambda X}}$$
+\end{corollary}
+
+\begin{proof}
+	Apply Markov with the function $g(x) = e^{\lambda x}$.
+\end{proof}
+
+The Chernoff bound allows us to control the tails of $X$ with its moment
+generating function. Often, this can give us much tighter bounds than those
+obtained by Chebyshev. 
+
+For example, let $X \sim N(0, \sigma^2)$. A simple calculation yields
+$\ev{e^{\lambda X}} = e^{\sigma^2 \lambda^2 / 2}$ for all $\lambda \in \R$. The
+Chernoff bound yields 
+
+$$\prob{X \geq t} \leq \inf_{\lambda \in \R}e^{\sigma^2\lambda^2/2 - \lambda
+t}$$
+
+Calculus reveals that this infimum is attained at $\lambda = t / \sigma^2$,
+yielding an upper bound of 
+
+$$\prob{X \geq t} \leq \exp\left[-\frac{t^2}{2\sigma^2}\right]$$
+
+Setting $t = 1$ and $\sigma^2 = 1$, Chebyshev gives us that $\prob{|X| \geq 1}
+\leq 1$, where Chernoff gives $\prob{X \geq 1} \leq e^{-1/2} \approx 0.6$, which
+is much tighter\footnote{This comparison may not be fair, since Chebyshev
+considers the absolute value.}.
+
+\section{Sparse regression}
+
+\section{General M-estimators}
+
+\end{document}
