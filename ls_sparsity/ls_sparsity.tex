@@ -12,6 +12,7 @@
 \newcommand{\ev}[1]{\mathbb{E}\left[#1\right]}
 \newcommand{\prob}[1]{\mathbb{P}\left\{#1\right\}}
 \newcommand{\var}{\textrm{var}}
+\newcommand{\subG}{\mathsf{subG}}
 \usepackage{amssymb, amsmath, amsthm}
 \usepackage{enumerate}
 
@@ -120,15 +121,44 @@ Chernoff bound yields
 $$\prob{X \geq t} \leq \inf_{\lambda \in \R}e^{\sigma^2\lambda^2/2 - \lambda
 t}$$
 
-Calculus reveals that this infimum is attained at $\lambda = t / \sigma^2$,
+Some calculus reveals that this infimum is attained at $\lambda = t / \sigma^2$,
 yielding an upper bound of 
 
 $$\prob{X \geq t} \leq \exp\left[-\frac{t^2}{2\sigma^2}\right]$$
 
-Setting $t = 1$ and $\sigma^2 = 1$, Chebyshev gives us that $\prob{|X| \geq 1}
-\leq 1$, where Chernoff gives $\prob{X \geq 1} \leq e^{-1/2} \approx 0.6$, which
-is much tighter\footnote{This comparison may not be fair, since Chebyshev
-considers the absolute value.}.
+Importantly, the form of the normal MGF leads to
+very fast decay in the tail. It is natural to wonder whether other random
+variables exhibit similar rates. This motivates the
+following definition.
+
+\begin{definition} [sub-Gaussian random variable]
+	Let $X$ be a mean-zero random variable taking values in $\R$. We say $X$ is sub-Gaussian with
+	parameter $\sigma^2$ if for all $\lambda \in \R$:
+
+	$$\ev{e^{\lambda X}} \leq e^{\lambda^2\sigma^2 / 2}$$
+
+	We write $X \in \subG(\sigma^2)$.
+\end{definition} 
+
+Clearly, any sub-Gaussian random variable with achieve the same tail rate as the
+corresponding normal.
+
+\begin{definition}[sub-Gaussian random vector]
+	Let $X$ be a mean zero random vector taking values in $\R^d$. We say $X$
+	is $\sigma^2$ sub-Gaussian  if $X^Tu \in \subG(\sigma^2)$ for any unit
+	vector $u \in \R^d$.
+\end{definition}
+
+Sub-gaussians have many useful properties. We will be particularly interested in the maximum (or $\infty$-norm) of
+sub-Gaussian vectors. The key lemma is stated below (proof follows by a union bound).
+
+\begin{lemma}
+	Let $X_1, ..., X_n \in \subG(\sigma^2)$. Then
+
+	$$\max_{i = 1...n}|X_i| \lesssim \sigma\sqrt{\log n}$$
+
+	with high probability.
+\end{lemma}
 
 \section{Sparse regression}
 
