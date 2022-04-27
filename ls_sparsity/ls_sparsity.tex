@@ -5,14 +5,24 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\X}{\mathbb{X}}
 \newcommand{\Y}{\mathbb{Y}}
-\newcommand{\calU}{\mathcal{U}}
-\newcommand{\calO}{\mathcal{O}}
-\newcommand{\calB}{\mathcal{B}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cB}{\mathcal{B}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cZ}{\mathcal{Z}}
 \newcommand{\argmin}{\mathop{\rm arg\,min}}
 \newcommand{\ev}[1]{\mathbb{E}\left[#1\right]}
 \newcommand{\prob}[1]{\mathbb{P}\left\{#1\right\}}
 \newcommand{\var}{\textrm{var}}
 \newcommand{\subG}{\mathsf{subG}}
+\newcommand{\iid}{\overset{\textrm{iid}}{\sim}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\newcommand{\eps}{\varepsilon} % best epsilon
 \usepackage{amssymb, amsmath, amsthm}
 \usepackage{enumerate}
 
@@ -27,26 +37,26 @@
 \newtheorem{corollary}{Corollary}
 \newtheorem{example}{Example}
 
-\title{Least squares with sparsity}
+\title{Least squares with sparsity and generalizations}
 \author{Notes by Parker Knight}
 
 
 \begin{document}
 \maketitle
 
-\begin{abstract}
-	It is well known that, in the low-dimensional setting, the OLS estimator
-	enjoys several nice properties, including consistency. However, in the
-	high-dimensional regime, the aspect ratio stays bounded away from 0, and
-	the estimator may not converge to the true parameter value. We may
-	ameliorate this shortcoming by imposing additional structure on the true
-	parameter; in particular, we assume that the parameter vector is sparse.
-
-	This note set will study nonasymptotic bounds on estimation and
-	prediction error for the LASSO, the most well-known variant of sparse regression. To do so, we first develop a
-	theory of tail bounds and sub-Gaussian random variables. After studying
-	the LASSO, we give a brief treatment of general regularized M-estimators.
-\end{abstract}
+%% \begin{abstract}
+%% 	It is well known that, in the low-dimensional setting, the OLS estimator
+%% 	enjoys several nice properties, including consistency. However, in the
+%% 	high-dimensional regime, the aspect ratio stays bounded away from 0, and
+%% 	the estimator may not converge to the true parameter value. We may
+%% 	ameliorate this shortcoming by imposing additional structure on the true
+%% 	parameter; in particular, we assume that the parameter vector is sparse.
+%%
+%% 	This note set will study nonasymptotic bounds on estimation and
+%% 	prediction error for the LASSO, the most well-known variant of sparse regression. To do so, we first develop a
+%% 	theory of tail bounds and sub-Gaussian random variables. After studying
+%% 	the LASSO, we give a brief treatment of general regularized M-estimators.
+%% \end{abstract}
 
 \section{Preliminaries}
 
@@ -160,8 +170,76 @@ sub-Gaussian vectors. The key lemma is stated below (proof follows by a union bo
 	with high probability.
 \end{lemma}
 
-\section{Sparse regression}
+\section{The LASSO}
 
-\section{General M-estimators}
+
+Suppose a linear model
+
+$$Y = X\theta^{*} + \eps$$
+
+with $Y \in \R^n, \X \in R^{n \times d}, \theta^{*} \in \R^{d}$ and $\eps \in \R^{n}$. Furthermore, suppose that each element of $\eps$ are independent random variables, with a distribution to be specified later. Our goal is to estimate the vector $\theta^{*}$. A naive approach (which uses no further assumptions) is least squares, which will achieve a convergence rate of $\frac{d}{n}$. In the high-dimensional setting when $\frac{d}{n} \rightarrow \gamma > 0$, this approach is not good enough. Even as the sample size tends to infinity, the error will stay bounded away from zero. We get around this by placing further assumptions on $\theta^{*}$.
+
+In particular, assume that $\theta^{*}$ is $s$-sparse, supported on an index set $S$. A natural estimator is the LASSO, which induces sparsity in the estimate by way of an $\ell_{1}$ penalty:
+
+$$\hat{\theta} \in \argmin_{\theta \in \R^{d}}\left\{\frac{1}{2n}\norm{Y - X\theta}^{2}_{2} + \lambda \norm{\theta}_{1}\right\}$$
+We now aim to study the convergence rate of the LASSO estimator, given our knowledge of the support of $\theta^{*}$. First, we need a couple of definitions. For any index set $S \subset [d]$ and $\alpha \geq 1$, define
+
+$$\cC_{\alpha}(S) = \left\{ \Delta \in \R^{d} : \norm{\Delta_{S^{c}}}_{1}\} \leq \alpha \norm{\Delta_{S}}_{1}\right\}$$
+
+The set defined abvoe constains the set of 'good' vectors with respect to $S$; i.e., those for which the $\ell_{1}$ norm on $S$ is greater than the $\ell_{1}$ norm off of $S$. Clearly, every vector supported exactly on $S$ lies in $\cC_{\alpha}(S)$. Importantly, if $\Delta \in \cC_{\alpha}(S)$, then
+
+\begin{align*}
+  \norm{\Delta}_{1}
+  &= \norm{\Delta_{S}}_{1} + \norm{\Delta_{S^{c}}}_{1} \\
+  &\leq (\alpha + 1)\norm{\Delta_{S}}_{1} \\
+  &\leq (\alpha + 1)\sqrt{s}\norm{\Delta}_{2}
+\end{align*}
+
+where $s = |S|$. The first equality in the computation is a result of the decomposability of the $\ell_{1}$ norm over an index set $S$, and the final inequality follows by Cauchy-Schwarz. We will return to this notion of  decomposability more broadly in the next section; for now, it will serve as a useful tool in the computations that follow. The result above tells us that when $s << d$, inclusion in $\cC_{\alpha}(S)$ grants much tighter control over the $\ell_{1}$ norm than the usual bound $\norm{x}_{1} \leq \sqrt{d}\norm{x}_{2}$.
+
+We say that the matrix $X$ satisfies the \textit{restricted eigenvalue} condition over $S$ with paramters $(k, \alpha)$ if
+
+$$\frac1n\norm{X\Delta}_{2}^{2} \geq k\norm{\Delta}_{2}^{2} \quad \forall \Delta \in \cC_{\alpha}(S)$$
+
+This condition is closely related to the curvature of the loss function. Observe that the Hessian of the loss function is $\frac1n X^{T}X$: we want this matrix to be positive definite so that our optimization problem is strictly convex. However, this is impossible in the high-dimensional setting, so we only require positive eigenvalues in the 'good' directions, defined by the set $\cC_{\alpha}(S)$.
+
+\begin{theorem}[LASSO Convergence]
+  Assume that $\theta^{*}$ has support $S \subset [d]$ with size $|S| = s$, and suppose that $X$ satisfies the restricted eigenvalue condition over $S$ with parameters $(k, 3)$. Then any LASSO solution $\hat{\theta}$ computed with tuning paramter $\lambda \geq 2\norm{\frac1n X^{T}\eps}_{\infty}$ satisfies
+
+  $$\norm{\hat{\theta} - \theta^{*}}_{2} \leq \frac{3}{k}\sqrt{s}\lambda$$
+\end{theorem}
+
+\begin{proof}
+
+ \end{proof}
+
+\section{Regularized M-estimators}
+
+Here we present a general theory for estimation under a family of regularized M-estimators. This content is guided by Negahban et al. 2012.
+
+Let $Z_{1}, ..., Z_{n} \iid \bbP$ be random variables taking values in a set $\cZ$. Let $\theta \in \Theta$ be an unknown parameter of the marginal distribution $\bbP$, where $\Theta$ is a vector space. Let $\cL : \Theta \times \cZ^{n} \rightarrow \R$ be a convex and differentiable loss function\footnote{We write $\cL(\theta, Z_{1}, ..., Z_{n}) = \cL(\theta)$ for brevity, but the dependence on the data maintains.}, and define
+
+$$\theta^{*} := \argmin_{\theta \in \Theta}\ev{\cL(\theta)}$$
+
+where expectation is taken with respect to $\bbP$. We aim to estimate $\theta^{*}$ by the solution to the convex program
+
+$$\hat{\theta} \in \argmin_{\theta \in \Theta}\left\{\cL(\theta) + \lambda\Phi(\theta)\right\}$$
+
+where $\lambda > 0$ is a tuning parameter chosen by the analyst, and $\Phi$ is a regularizer from $\Theta$ to $\R_{+}$ (typically a norm). Let $\norm{.}$ be a norm on $\Theta$ induced by inner product $\ip{.}{.}$. Our aim is to provide bounds on $\norm{\hat{\theta} - \theta^{*}}$ in a high-dimensional setting. To do so, we need to assume certain conditions on both $\cL$ and $\Phi$.
+
+\subsection{Decomposability}
+
+First we introduce the notion of \textit{decomposable} regularizers.
+
+\begin{definition}
+
+\end{definition}
+
+
+\subsection{Restricted Strong Convexity}
+
+\subsection{A General Result}
+
+\subsection{Revisiting LASSO regression}
 
 \end{document}
