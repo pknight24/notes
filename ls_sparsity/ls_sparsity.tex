@@ -201,7 +201,7 @@ We say that the matrix $X$ satisfies the \textit{restricted eigenvalue} conditio
 
 $$\frac1n\norm{X\Delta}_{2}^{2} \geq k\norm{\Delta}_{2}^{2} \quad \forall \Delta \in \cC_{\alpha}(S)$$
 
-This condition is closely related to the curvature of the loss function. Observe that the Hessian of the loss function is $\frac1n X^{T}X$: we want this matrix to be positive definite so that our optimization problem is strictly convex. However, this is impossible in the high-dimensional setting, so we only require positive eigenvalues in the 'good' directions, defined by the set $\cC_{\alpha}(S)$.
+This condition is closely related to the curvature of the loss function. Observe that the Hessian of the loss function is $\frac{1}{2n} X^{T}X$: we want this matrix to be positive definite so that our optimization problem is strictly convex. However, this is impossible in the high-dimensional setting, so we only require positive eigenvalues in the 'good' directions, defined by the set $\cC_{\alpha}(S)$.
 
 \begin{theorem}[LASSO Convergence]
   Assume that $\theta^{*}$ has support $S \subset [d]$ with size $|S| = s$, and suppose that $X$ satisfies the restricted eigenvalue condition over $S$ with parameters $(k, 3)$. Then any LASSO solution $\hat{\theta}$ computed with tuning paramter $\lambda \geq 2\norm{\frac1n X^{T}\eps}_{\infty}$ satisfies

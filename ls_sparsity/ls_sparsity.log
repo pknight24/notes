@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.1.3)  26 APR 2022 20:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.1.3)  26 APR 2022 20:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -196,7 +196,7 @@ e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></home/parker
 /texmf/fonts/type1/urw/palatino/uplb8a.pfb></home/parker/texmf/fonts/type1/urw/
 palatino/uplr8a.pfb></home/parker/texmf/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on ls_sparsity.pdf (5 pages, 213008 bytes).
+Output written on ls_sparsity.pdf (5 pages, 213030 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
