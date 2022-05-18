@@ -184,7 +184,7 @@ In particular, assume that $\theta^{*}$ is $s$-sparse, supported on an index set
 $$\hat{\theta} \in \argmin_{\theta \in \R^{d}}\left\{\frac{1}{2n}\norm{Y - X\theta}^{2}_{2} + \lambda \norm{\theta}_{1}\right\}$$
 We now aim to study the convergence rate of the LASSO estimator, given our knowledge of the support of $\theta^{*}$. First, we need a couple of definitions. For any index set $S \subset [d]$ and $\alpha \geq 1$, define
 
-$$\cC_{\alpha}(S) = \left\{ \Delta \in \R^{d} : \norm{\Delta_{S^{c}}}_{1}\} \leq \alpha \norm{\Delta_{S}}_{1}\right\}$$
+$$\cC_{\alpha}(S) = \left\{ \Delta \in \R^{d} : \norm{\Delta_{S^{c}}}_{1} \leq \alpha \norm{\Delta_{S}}_{1}\right\}$$
 
 The set defined abvoe constains the set of 'good' vectors with respect to $S$; i.e., those for which the $\ell_{1}$ norm on $S$ is greater than the $\ell_{1}$ norm off of $S$. Clearly, every vector supported exactly on $S$ lies in $\cC_{\alpha}(S)$. Importantly, if $\Delta \in \cC_{\alpha}(S)$, then
 
@@ -203,15 +203,103 @@ $$\frac1n\norm{X\Delta}_{2}^{2} \geq k\norm{\Delta}_{2}^{2} \quad \forall \Delta
 
 This condition is closely related to the curvature of the loss function. Observe that the Hessian of the loss function is $\frac{1}{2n} X^{T}X$: we want this matrix to be positive definite so that our optimization problem is strictly convex. However, this is impossible in the high-dimensional setting, so we only require positive eigenvalues in the 'good' directions, defined by the set $\cC_{\alpha}(S)$.
 
-\begin{theorem}[LASSO Convergence]
+\begin{theorem}[LASSO Convergence]\label{thm:lasso-conv}
   Assume that $\theta^{*}$ has support $S \subset [d]$ with size $|S| = s$, and suppose that $X$ satisfies the restricted eigenvalue condition over $S$ with parameters $(k, 3)$. Then any LASSO solution $\hat{\theta}$ computed with tuning paramter $\lambda \geq 2\norm{\frac1n X^{T}\eps}_{\infty}$ satisfies
 
-  $$\norm{\hat{\theta} - \theta^{*}}_{2} \leq \frac{3}{k}\sqrt{s}\lambda$$
+  $$\norm{\hat{\theta} - \theta^{*}}_{2} \lesssim \frac{\sqrt{s}}{k}\lambda$$
 \end{theorem}
 
-\begin{proof}
+To prove Theorem \ref{thm:lasso-conv}, we state and prove two Lemmas that will yield the result.
 
- \end{proof}
+\begin{lemma}[Deviation inequalities]\label{lemma:dev-ineq-lasso}
+	For any $\theta^{*} \in \R^{d}$ supported on $S$ and any $\Delta \in \R^{d}$, we have
+	$$\norm{\theta^{*} + \Delta}_{1} - \norm{\theta^{*}}_{1} \geq \norm{\Delta_{S^{c}}}_{1} - \norm{\Delta_{S}}_{1}$$
+	Furthermore, if $\lambda \geq 2\norm{\frac1n X^{T}\eps}_{\infty}$, we have
+
+	$$\frac{1}{2n}\norm{Y - X(\theta^{*} + \Delta)}_{2}^{2} - \frac{1}{2n}\norm{Y - X\theta^{*}}_{2}^{2} \geq -\frac{\lambda}{2}\left(\norm{\Delta_{S}}_{1} + \norm{\Delta_{S^{c}}}_{1}\right)$$
+\end{lemma}
+
+\begin{proof}
+  To prove the first claim, observe
+
+  \begin{align*}
+	\norm{\theta^{*} + \Delta}_{1}
+	&= \norm{\theta^{*}_{S} + \theta^{*}_{S^{c}} + \Delta_{S} + \Delta_{S^{c}}} \\
+	&= \norm{\theta^{*}_{S} + \Delta_{S} + \Delta_{S^{c}}} \quad \textrm{(since $\theta^{*}$ is supported on $S$)} \\
+	&\geq \norm{\theta^{*}_{S} + \Delta_{S^{c}}}_{1} - \norm{\Delta_{S}}_{1} \quad \textrm{(triangle inequality)} \\
+	&= \norm{\theta^{*}_{S}}_{1} + \norm{\Delta_{S^{c}}}_{1} - \norm{\Delta_{S}}_{1} \quad \textrm{(decomposability)} \\
+	&= \norm{\theta^{*}}_{1} + \norm{\Delta_{S^{c}}}_{1} - \norm{\Delta_{S}}_{1} \quad \textrm{(support of $\theta^{*}$)}
+  \end{align*}
+
+  Rearranging terms gives the result. To prove the second claim, we first introduce the notation
+
+  $$\cL(\theta) = \frac{1}{2n}\norm{Y - X\theta}_{2}^{2}$$
+
+  Observe that $\cL(.)$ is a convex function. Using this, we have
+
+  \begin{align*}
+	\cL(\theta^{*} + \Delta) - \cL(\theta^{*})
+	&\geq \nabla \cL(\theta^{*})^{T}\Delta \quad \textrm{(first order condition for convex functions)} \\
+	& \geq - |\nabla \cL(\theta^{*})^{T}\Delta | \\
+	&\geq -\norm{\nabla \cL(\theta^{*})}_{\infty}\norm{\Delta}_{1} \quad \textrm{(Holder)} \\
+	&= - \norm{\frac1nX^{T}\eps}_{\infty}(\norm{\Delta_{S}}_{1} + \norm{\Delta_{S^{c}}}_{1}) \\
+	&\geq - \frac{\lambda}{2}(\norm{\Delta_{S}}_{1} + \norm{\Delta_{S^{c}}}_{1})
+  \end{align*}
+
+  as desired.
+\end{proof}
+
+\begin{lemma}[Control of error vector]\label{lemma:error-in-cone-lasso}
+  Let $\hat{\theta}$ be the solution to the LASSO program with tuning parameter $\lambda \geq 2\norm{\frac1nX^{T}\eps}_{\infty}$. Then $\hat{\Delta} = \hat{\theta} - \theta^{*} \in \cC_{3}(S)$.
+\end{lemma}
+
+\begin{proof}
+  Optimality of $\hat{\theta}$ tells us
+
+  $$\frac{1}{2n}\norm{Y - X\hat{\theta}}_{2}^{2} + \lambda\norm{\hat{\theta}}_{1} \leq \frac{1}{2n}\norm{Y - X\theta^{*}}_{2}^{2} + \lambda\norm{\theta^{*}}_{1}$$
+
+  Using $\hat{\theta} = \hat{\Delta} + \theta^{*}$ and rearranging terms gives
+
+$$0 \geq \frac{1}{2n}\norm{Y - X(\theta^{*} + \hat{\Delta})}_{2}^{2} - \frac{1}{2n}\norm{Y - X\theta^{*}}_{2}^{2} + \lambda(\norm{\hat{\Delta} + \theta^{*}}_{1} - \norm{\theta^{*}}_{1})$$
+
+Applying Lemma \ref{lemma:dev-ineq-lasso} to the terms in the above inequality gives
+
+$$0 \geq \lambda\left(\norm{\hat{\Delta}_{S^{c}}}_{1} - \norm{\hat{\Delta}_{S}}_{1} - \frac12\norm{\hat{\Delta}_{S}}_{1} - \frac12\norm{\hat{\Delta}_{S^{c}}}_{1}\right)$$
+
+Rearranging gives
+
+$$3\norm{\hat{\Delta}_{S}}_{1} \geq \norm{\hat{\Delta}_{S^{c}}}$$
+
+which shows $\hat{\Delta} \in \cC_{3}(S)$.
+
+\end{proof}
+
+Now we can prove Theorem \ref{thm:lasso-conv}.
+
+\begin{proof}[Proof of the Theorem]
+
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \section{Regularized M-estimators}
 
