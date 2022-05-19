@@ -278,11 +278,34 @@ Now we can prove Theorem \ref{thm:lasso-conv}.
 
 \begin{proof}[Proof of the Theorem]
 
+  We begin by formulating a \textit{basic inequality}. Optimality tells us
+
+  $$\frac{1}{2n}\norm{Y - X\hat{\theta}}_{2}^{2} + \lambda\norm{\hat{\theta}}_{1} \leq \frac{1}{2n}\norm{Y - X\theta^{*}}_{2}^{2} + \lambda\norm{\theta^{*}}_{1}$$
+
+  Additionally, observe
+
+  $$\norm{Y - X\hat{\theta}}_{2}^{2} = \norm{X\theta^{*} + \eps - X\hat{\theta}}_{2}^{2} = \norm{X\theta^{*} - X\hat{\theta}}_{2}^{2} - 2(X(\hat{\theta} - \theta^{*}))^{T}\eps + \norm{\eps}_{2}^{2}$$
+
+  Substituting this into the above inequality grants us the following computation.
+
+  \begin{align*}
+    \frac{1}{2n}\norm{X\hat{\Delta}}_{2}^{2}
+    &\leq \frac1n\hat{\Delta}^{T}X^{T}\eps + \lambda (\norm{\theta^{*}}_{1} - \norm{\hat{\theta}}_{1}) \\
+    &= \frac1n\hat{\Delta}^{T}X^{T}\eps - \lambda (\norm{\hat{\Delta} + \theta^{*}}_{1} - \norm{\theta^{*}}_{1}) \\
+    &\leq \frac1n\hat{\Delta}^{T}X^{T}\eps + \lambda(\norm{\hat{\Delta_{S}}}_{1} - \norm{\hat{\Delta}_{S^{c}}}_{1}) \quad \textrm{(applying Lemma \ref{lemma:dev-ineq-lasso})} \\
+    &\leq \norm{\frac1nX^{T}\eps}_{\infty}\norm{\hat{\Delta}}_{1} + \lambda\norm{\hat{\Delta}_{S}}_{1} \quad \textrm{(Holder's inequality)} \\
+    &\leq \frac{\lambda}{2}\norm{\hat{\Delta}}_{1} + \lambda\norm{\hat{\Delta}_{S}}_{1} \\
+    &\leq \frac32 \lambda \norm{\hat{\Delta}}_{1} \\
+    &\leq 6\lambda\sqrt{s}\norm{\hat{\Delta}}_{2} \quad \textrm{(since $\hat{\Delta} \in \cC_{3}(S)$, see comment above)}
+  \end{align*}
+
+  Additionally, since $\hat{\Delta} \in \cC_{3}(S)$ and $X$ satisfies the restriced eigenvalue condition by assumption, we know that $\frac1n\norm{X\hat{\Delta}}_{2}^{2} \geq k\norm{\hat{\Delta}}^{2}_{2}$. This yields
+
+  $$\frac{k}{2}\norm{\hat{\Delta}}_{2}^{2} \leq 6\lambda\sqrt{s}\norm{\hat{\Delta}}_{2}$$
+
+  Rearranging terms gives the result.
 
 \end{proof}
-
-
-
 
 
 
