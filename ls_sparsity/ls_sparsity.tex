@@ -162,7 +162,7 @@ corresponding normal.
 Sub-gaussians have many useful properties. We will be particularly interested in the maximum (or $\infty$-norm) of
 sub-Gaussian vectors. The key lemma is stated below (proof follows by a union bound).
 
-\begin{lemma}
+\begin{lemma}\label{lemma:maximal}
 	Let $X_1, ..., X_n \in \subG(\sigma^2)$. Then
 
 	$$\max_{i = 1...n}|X_i| \lesssim \sigma\sqrt{\log n}$$
@@ -195,7 +195,7 @@ The set defined abvoe constains the set of 'good' vectors with respect to $S$; i
   &\leq (\alpha + 1)\sqrt{s}\norm{\Delta}_{2}
 \end{align*}
 
-where $s = |S|$. The first equality in the computation is a result of the decomposability of the $\ell_{1}$ norm over an index set $S$, and the final inequality follows by Cauchy-Schwarz. We will return to this notion of  decomposability more broadly in the next section; for now, it will serve as a useful tool in the computations that follow. The result above tells us that when $s << d$, inclusion in $\cC_{\alpha}(S)$ grants much tighter control over the $\ell_{1}$ norm than the usual bound $\norm{x}_{1} \leq \sqrt{d}\norm{x}_{2}$.
+where $s = |S|$. The first equality in the computation is a result of the decomposability of the $\ell_{1}$ norm over an index set $S$, and the final inequality follows by Cauchy-Schwarz.  The result above tells us that when $s << d$, inclusion in $\cC_{\alpha}(S)$ grants much tighter control over the $\ell_{1}$ norm than the usual bound $\norm{x}_{1} \leq \sqrt{d}\norm{x}_{2}$.
 
 We say that the matrix $X$ satisfies the \textit{restricted eigenvalue} condition over $S$ with paramters $(k, \alpha)$ if
 
@@ -303,54 +303,33 @@ Now we can prove Theorem \ref{thm:lasso-conv}.
 
   $$\frac{k}{2}\norm{\hat{\Delta}}_{2}^{2} \leq 6\lambda\sqrt{s}\norm{\hat{\Delta}}_{2}$$
 
-  Rearranging terms gives the result.
+  Rearranging terms gives 
+
+  $$\norm{\hat{\Delta}}_2 \lesssim \frac{\sqrt{s}}{k}\lambda$$
+
+  as desired.
 
 \end{proof}
 
+\subsection{Estimation under a statistical model}
 
+Until now, the results we have given are entirely deterministic. Randomness
+enters the equation when we suppose a model for our error terms. 
 
+In particular,
+suppose that the entries of $\eps$ are iid $\subG(\sigma^2)$ with zero mean.
+Furthermore, we normalize the columns of $X$ so that they have $\ell_2$ norm at
+most $\sqrt{n}$, and still assume that $X$ satisfies the restricted eigenvalue
+condition. Under these conditions, $\frac1nX^T\eps$ is a sub-Gaussian vector
+of dimension $d$ with parameter $\sigma^2/n$. Thus by Lemma \ref{lemma:maximal},
+it follows 
 
+$$\norm{\frac1nX^T\eps}_{\infty} \lesssim \sigma\sqrt{\frac{\log d}{n}}$$
 
+with high probability. Since our results are conditional on $\lambda \geq
+2\norm{\frac1nX^T\eps}_{\infty}$, take $\lambda = 2\sigma\sqrt{\log d / n}$, and
+Theorem \ref{thm:lasso-conv} will hold with high probability. In particular,
+this gives 
 
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Regularized M-estimators}
-
-Here we present a general theory for estimation under a family of regularized M-estimators. This content is guided by Negahban et al. 2012.
-
-Let $Z_{1}, ..., Z_{n} \iid \bbP$ be random variables taking values in a set $\cZ$. Let $\theta \in \Theta$ be an unknown parameter of the marginal distribution $\bbP$, where $\Theta$ is a vector space. Let $\cL : \Theta \times \cZ^{n} \rightarrow \R$ be a convex and differentiable loss function\footnote{We write $\cL(\theta, Z_{1}, ..., Z_{n}) = \cL(\theta)$ for brevity, but the dependence on the data maintains.}, and define
-
-$$\theta^{*} := \argmin_{\theta \in \Theta}\ev{\cL(\theta)}$$
-
-where expectation is taken with respect to $\bbP$. We aim to estimate $\theta^{*}$ by the solution to the convex program
-
-$$\hat{\theta} \in \argmin_{\theta \in \Theta}\left\{\cL(\theta) + \lambda\Phi(\theta)\right\}$$
-
-where $\lambda > 0$ is a tuning parameter chosen by the analyst, and $\Phi$ is a regularizer from $\Theta$ to $\R_{+}$ (typically a norm). Let $\norm{.}$ be a norm on $\Theta$ induced by inner product $\ip{.}{.}$. Our aim is to provide bounds on $\norm{\hat{\theta} - \theta^{*}}$ in a high-dimensional setting. To do so, we need to assume certain conditions on both $\cL$ and $\Phi$.
-
-\subsection{Decomposability}
-
-First we introduce the notion of \textit{decomposable} regularizers.
-
-\begin{definition}
-
-\end{definition}
-
-
-\subsection{Restricted Strong Convexity}
-
-\subsection{A General Result}
-
-\subsection{Revisiting LASSO regression}
-
+$$\norm{\hat{\Delta}}_2 \lesssim \frac{\sigma}{k}\sqrt{\frac{s\log d}{n}}$$
 \end{document}
