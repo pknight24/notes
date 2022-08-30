@@ -31,5 +31,3 @@ $$\beta | \sigma^2 \sim N(0, \sum_{k = 1}^K\sigma_k^2\Sigma_k)$$
 
 PDR aims to estimate the genetic covariance explained by each component,
 $\sigma_k^2\Sigma_k$. 
-
-
