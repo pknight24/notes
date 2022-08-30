@@ -1,5 +1,3 @@
-% Created 2022-08-30 Tue 09:45
-% Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -40,7 +38,12 @@
 \newcommand{\eps}{\varepsilon} % best epsilon
 \usepackage{amssymb, amsmath, amsthm}
 \usepackage{enumerate}
+
 \usepackage{palatino}
+
+
+
+\newtheorem{assumption}{Assumption}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
 \newtheorem{definition}{Definition}
@@ -49,31 +52,31 @@
 \author{Parker Knight}
 \date{\today}
 \title{Submatrix Detection}
-\hypersetup{
- pdfauthor={Parker Knight},
- pdftitle={Submatrix Detection},
- pdfkeywords={},
- pdfsubject={},
- pdfcreator={Emacs 26.3 (Org mode 9.5)}, 
- pdflang={English}}
 \begin{document}
 
 \maketitle
-\tableofcontents
-
-
-
-
 
 \section{Introduction}
-\label{sec:org1e6b6ee}
+
+This set of notes concerns the submatrix detection problem, following
+\cite{butucea_detection_2013}. 
 
 
-This note set concerns the sparse submatrix detection problem, following \cite{butucea_detection_2013}.
+Our setup is as follows: we observe a high dimensional random matrix, and want to test if it contains a submatrix (of much smaller size) with large entries. In particular, let
 
+$$Y_{ij} = s_{ij} + \eps_{ij}$$
+
+for $i \in [N], j \in [M]$, and the $\eps_{ij}$ are iid $N(0,1)$. We test the following hypothesis:
+
+$$H_0: s_{ij} = 0 \quad \forall \quad i,j$$
+
+versus
+
+$$H_1: \exists C \subset [N] \times [M] \quad \textrm{s.t.} \quad s_{ij} \geq a \quad \forall i,j \in C$$
 
 
 
 \bibliography{refs.bib}
 \bibliographystyle{ieeetr}
+
 \end{document}
