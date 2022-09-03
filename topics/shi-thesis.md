@@ -15,4 +15,7 @@ $$
 $$
 
 Say that $\beta$ admits submatrix sparsity if there exists an index set $C$ such
-that 
+that $\beta_{ij} = 0$ for $(i,j) \notin C$ and $\beta_{ij} \neq 0$ otherwise.
+
+The big idea: construct a score matrix for $\beta$, then apply the testing
+procedures from Butucea and Ingster.
