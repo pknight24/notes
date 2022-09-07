@@ -80,8 +80,9 @@ $$H_1: \exists C = A \times B \subset [N] \times [M] \quad \textrm{s.t.}
 where $|A| = n$ and $|B| = m$. We assume that the size of the matrix (i.e., the
 values of $n$ and $m$) is known. Let $\cS_{nm,a}$ denote the set of all $N
 \times M$ matrices satisfying the alternative hypothesis, and let $\cC_{nm}$
-denote the set of all possible submatrices of an $N \times M$ matrix\footnote{In
-other words, $\cC_{nm} = \{A \times B : A \subset [N], B \subset [M]\}$}. Let
+denote the set of all possible $n \times m$ submatrices of an $N \times M$ matrix\footnote{In
+other words, $\cC_{nm} = \{A \times B : A \subset [N], B \subset [M], |A| = n,
+|M| = m\}$}. Let
 $\probover{E}{0}$ denote the probability of event $E$ under the null hypothesis,
 and let $\probover{E}{S}$ denote the probability of $E$ under some $S \in \cS_{nm,a}$.
 
@@ -90,12 +91,12 @@ values in $\{0,1\}$. We introduce the following notation:
 
 \begin{align*}
 	&\textrm{Type I Error:} \quad \alpha(\psi) = \probover{\psi = 1}{0} \\
-	&\textrm{Type II Error:} \quad \beta(\psi) = \sup_{S \in \cS_{nm,a}}\probover{\psi = 0}{S}\\
-	&\textrm{Risk:} \quad \gamma(\psi) = \alpha(\psi) + \beta(\psi)
+	&\textrm{Type II Error:} \quad \beta(\psi, S) = \probover{\psi = 0}{S}\\
+	&\textrm{Maximal Type II Error:} \quad \beta_{nm,a}(\psi) = \sup_{S \in \cS_{nm,a}}\probover{\psi = 0}{S} \\
+	&\textrm{Risk:} \quad \gamma_{nm,a}(\psi) = \alpha(\psi) + \beta_{nm,a}(\psi)
 \end{align*} 
 
-We aim to construct a test $\psi^*$ of $H_0$ that satisfies $\gamma(\psi)
-\rightarrow 0$ under the following high dimensional sparse asymptotic regime: $N,M,n,m
+We consider the following high dimensional sparse asymptotic regime: $N,M,n,m
 \rightarrow \infty$ with $p = n/N, q = m/M \rightarrow 0$. 
 
 \bibliography{refs.bib}

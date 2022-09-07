@@ -1,15 +1,15 @@
 # Fdb version 3
-["bibtex main"] 1661896687 "main.aux" "main.bbl" "main" 1661949634
+["bibtex main"] 1662418519 "main.aux" "main.bbl" "main" 1662418724
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1661949634 878 c2ed0a161f717cefaf8dc2354a092105 "pdflatex"
+  "main.aux" 1662418724 878 c2ed0a161f717cefaf8dc2354a092105 "pdflatex"
   "refs.bib" 1661788423 2821 251b39f81697d84dac49f72c8b00fdb0 ""
   (generated)
-  "main.bbl"
   "main.blg"
-["pdflatex"] 1661949634 "/home/parker/notes/topics/submatrix_detection/main.tex" "/home/parker/notes/topics/submatrix_detection/main.pdf" "main" 1661949634
+  "main.bbl"
+["pdflatex"] 1662418724 "/home/parker/notes/topics/submatrix-detection/main.tex" "/home/parker/notes/topics/submatrix-detection/main.pdf" "main" 1662418724
   "/etc/texmf/web2c/texmf.cnf" 1641229488 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/parker/notes/topics/submatrix_detection/main.aux" 1661949634 878 c2ed0a161f717cefaf8dc2354a092105 ""
-  "/home/parker/notes/topics/submatrix_detection/main.tex" 1661949633 3509 cbc90e0d1dd3590925f37485fa2a9643 ""
+  "/home/parker/notes/topics/submatrix-detection/main.aux" 1662418724 878 c2ed0a161f717cefaf8dc2354a092105 ""
+  "/home/parker/notes/topics/submatrix-detection/main.tex" 1662418723 3561 46b7075ee3efa8908bc9b5eb62e7e6f1 ""
   "/home/parker/texmf/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136768653 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
   "/home/parker/texmf/fonts/tfm/adobe/palatino/pplb8t.tfm" 1136768653 3456 16dd534f88eb2bd21ebc7203786b436e ""
   "/home/parker/texmf/fonts/tfm/adobe/palatino/pplr8r.tfm" 1136768653 2796 d37c29814a6717720ee1a7c9a0b2c3b8 ""
@@ -121,14 +121,14 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1596975543 38841 5237427e4d3283e7b009b6a8b45dfdcd ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1641229492 75955 f78456fd1308dc295dc476a68e28d85b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1641229493 1156131 63907c96100ffd66de7db7888af4471a ""
-  "main.aux" 1661949634 878 c2ed0a161f717cefaf8dc2354a092105 "pdflatex"
-  "main.bbl" 1661896687 204 bc4f9b0953da59e836364b7d534f27f9 "bibtex main"
-  "main.out" 1661949634 47 a02d95553e30b97ff125b1aa17cf9044 "pdflatex"
-  "main.tex" 1661949633 3509 cbc90e0d1dd3590925f37485fa2a9643 ""
+  "main.aux" 1662418724 878 c2ed0a161f717cefaf8dc2354a092105 "pdflatex"
+  "main.bbl" 1662418519 204 bc4f9b0953da59e836364b7d534f27f9 "bibtex main"
+  "main.out" 1662418724 47 a02d95553e30b97ff125b1aa17cf9044 "pdflatex"
+  "main.tex" 1662418723 3561 46b7075ee3efa8908bc9b5eb62e7e6f1 ""
   (generated)
   "main.out"
-  "main.aux"
   "main.pdf"
-  "/home/parker/notes/topics/submatrix_detection/main.pdf"
-  "/home/parker/notes/topics/submatrix_detection/main.log"
+  "/home/parker/notes/topics/submatrix-detection/main.pdf"
   "main.log"
+  "main.aux"
+  "/home/parker/notes/topics/submatrix-detection/main.log"
