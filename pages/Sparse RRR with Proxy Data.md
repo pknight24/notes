@@ -1,0 +1,7 @@
+- Multi-phenotype prediction with summary statistics.
+- Advisor: Rui Duan.
+-
+- Key papers:
+	- [[Joint variable and rank selection for parsimonious estimation of high-dimensional matrices]]
+	- [[Estimation and Inference with Proxy Data and its Genetic Applications]]
+	- [[A Unified Framework for High-Dimensional Analysis of $M$-Estimators with Decomposable Regularizers]]

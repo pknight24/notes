@@ -1,0 +1,10 @@
+- Detecting sparse associations in multi-phenotype-multi-genotype studies.
+- Advisor: Rajarshi Mukherjee.
+-
+-
+- Key papers:
+	- [[Methods for Multiple Phenotype—Multiple Genotype Testing and for COVID-19 Spread Modeling]]
+	- [[Detection of a sparse submatrix of a high-dimensional noisy matrix]]
+	- [[On combinatorial testing problems]]
+	- [[Global testing under sparse alternatives: ANOVA, multiple comparisons and the higher criticism]]
+	- [[The restricted isometry property and its implications for compressed sensing]]
